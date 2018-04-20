@@ -2,21 +2,28 @@ function init() {
 	document.addEventListener("deviceready",onDeviceReady, false);
 }
 
-function onDeviceReady() {
-	navigator.notification.beep(1);
-}
+$(document).ready(function(){
+	$('.menu-mobile').on('click touchstart', function(e){
+		$('html').toggleClass('menu-active');
+	  	e.preventDefault();
+	});
+})
 
-function deviceInfo() {
+$(function() {
+  $("#listView li").click(function () {
+    if ( $("#listView li").hasClass("list-item-active") ) {
+      $("#listView li").removeClass("list-item-active");
+    }
+    $(this).addClass("list-item-active");
+  });
+});
 
-	info =  'Hi, I am your smartphone :-)' + '\n' +
-			'=====' + '\n' +
-			'Device Name    : '     + device.name     + '\n' + 
-			'Device Cordova : '  + device.cordova + '\n' + 
-			'Device Platform: ' + device.platform + '\n' + 
-			'Device UUID    : '     + device.uuid     + '\n' + 
-			'Device Model   : '    + device.model     + '\n' + 
-			'Device Version : '  + device.version  + '\n';
 
-	navigator.notification.alert(info);
-	
+var c = document.querySelector('.card'), 
+    switchers = c.querySelectorAll('.switch');
+
+for(var i = 0; i < switchers.length; i++) {
+  switchers[i].addEventListener('click', function(){
+    c.classList.toggle('flipped');
+  }, false);
 }
