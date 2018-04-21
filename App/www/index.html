@@ -13,7 +13,7 @@
 	
 	<body onload="init()" class="ui-mobile-viewport ui-overlay-a">
 
-		<div data-role="page">
+		<div data-role="page" id="login">
 		    <header data-role="header" role="banner" class="ui-header ui-bar-inherit">
 		      <a  href=".menu_one" class="menu-mobile"></a>
 		      <h1 id="logo" class="ui-title" role="heading" aria-level="1" style="text-align: right; margin: 0 1em;">Eat&Share</h1>
@@ -23,12 +23,12 @@
 		    <menu>
 		      <h2 id="list-item-logo">Witaj w Eat&Share</h2>
 		      <ul id="listView" class="list">
-		        <li class="list-item-active"><a href="#">Home</a></li>
-		        <li><a href="#">Dodaj lokal</a></li>
-		        <li><a href="#">Dodaj cenę</a></li>
-		        <li><a href="#">Twoje konto</a></li>
-		        <li><a href="#">Wyloguj</a></li>
-		        <li><a href="#">O autorach</a></li>
+		        <li class="list-item-active"><a href="#home">Home</a></li>
+		        <li><a href="#addrestaurant">Dodaj lokal</a></li>
+		        <li><a href="#addprice">Dodaj cenę</a></li>
+		        <li><a href="#accountfav">Twoje konto</a></li>
+		        <li><a href="#login">Wyloguj</a></li>
+		        <li><a href="#authors">O autorach</a></li>
 		      </ul>
 		      <div class="footer">
 		            <p>Thank you for your visit! Eat&Share &copy; 2018</p>
@@ -66,25 +66,176 @@
 
 		<div data-role="page" id="home">
 
+				<header data-role="header" role="banner" class="ui-header ui-bar-inherit">
+						<a  href=".menu_one" class="menu-mobile"></a>
+						<h1 id="logo" class="ui-title" role="heading" aria-level="1" style="text-align: right; margin: 0 1em;">Eat&Share</h1>
+						<a id="icon-home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-home"></a>
+					</header>
+
+					<menu>
+		      <h2 id="list-item-logo">Witaj w Eat&Share</h2>
+		      <ul id="listView" class="list">
+		        <li class="list-item-active"><a href="#home">Home</a></li>
+		        <li><a href="#addrestaurant">Dodaj lokal</a></li>
+		        <li><a href="#addprice">Dodaj cenę</a></li>
+		        <li><a href="#accountfav">Twoje konto</a></li>
+		        <li><a href="#login">Wyloguj</a></li>
+		        <li><a href="#authors">O autorach</a></li>
+		      </ul>
+		      <div class="footer">
+		            <p>Thank you for your visit! Eat&Share &copy; 2018</p>
+		      </div>
+				</menu>
+				
+
+
 		</div>
 
 		<div data-role="page" id="showmetheway">
 
+				<header data-role="header" role="banner" class="ui-header ui-bar-inherit">
+						<a  href=".menu_one" class="menu-mobile"></a>
+						<h1 id="logo" class="ui-title" role="heading" aria-level="1" style="text-align: right; margin: 0 1em;">Eat&Share</h1>
+						<a id="icon-home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-home"></a>
+					</header>
+
+					<menu>
+							<h2 id="list-item-logo">Witaj w Eat&Share</h2>
+							<ul id="listView" class="list">
+								<a href="#home">Home</a></li>
+								<li><a href="#addrestaurant">Dodaj lokal</a></li>
+								<li><a href="#addprice">Dodaj cenę</a></li>
+								<li><a href="#accountfav">Twoje konto</a></li>
+								<li><a href="#login">Wyloguj</a></li>
+								<li><a href="#authors">O autorach</a></li>
+							</ul>
+							<div class="footer">
+										<p>Thank you for your visit! Eat&Share &copy; 2018</p>
+							</div>
+						</menu>
+
+
+
+
 		</div>
 	
 		<div data-role="page" id="accountfav">
+				<header data-role="header" role="banner" class="ui-header ui-bar-inherit">
+						<a  href=".menu_one" class="menu-mobile"></a>
+						<h1 id="logo" class="ui-title" role="heading" aria-level="1" style="text-align: right; margin: 0 1em;">Eat&Share</h1>
+						<!-- <a id="icon-home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-home"></a> -->
+					</header>
+
+				<menu>
+						<h2 id="list-item-logo">Witaj w Eat&Share</h2>
+						<ul id="listView" class="list">
+							<li class="list-item-active"><a href="#home">Home</a></li>
+							<li><a href="#addrestaurant">Dodaj lokal</a></li>
+							<li><a href="#addprice">Dodaj cenę</a></li>
+							<li class="list-item-active"><a href="#accountfav">Twoje konto</a></li>
+							<li><a href="#login">Wyloguj</a></li>
+							<li><a href="#authors">O autorach</a></li>
+						</ul>
+						<div class="footer">
+									<p>Thank you for your visit! Eat&Share &copy; 2018</p>
+						</div>
+					</menu>
 	
 		</div>
 	
 		<div data-role="page" id="accountvisit">
+				<header data-role="header" role="banner" class="ui-header ui-bar-inherit">
+						<a  href=".menu_one" class="menu-mobile"></a>
+						<h1 id="logo" class="ui-title" role="heading" aria-level="1" style="text-align: right; margin: 0 1em;">Eat&Share</h1>
+						<!-- <a id="icon-home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-home"></a> -->
+					</header>
+
+				<menu>
+						<h2 id="list-item-logo">Witaj w Eat&Share</h2>
+						<ul id="listView" class="list">
+							<li class="list-item-active"><a href="#home">Home</a></li>
+							<li><a href="#addrestaurant">Dodaj lokal</a></li>
+							<li><a href="#addprice">Dodaj cenę</a></li>
+							<li class="list-item-active"><a href="#accountfav">Twoje konto</a></li>
+							<li><a href="#login">Wyloguj</a></li>
+							<li><a href="#authors">O autorach</a></li>
+						</ul>
+						<div class="footer">
+									<p>Thank you for your visit! Eat&Share &copy; 2018</p>
+						</div>
+					</menu>
 	
 		</div>
 
 		<div data-role="page" id="addrestaurant">
+				<header data-role="header" role="banner" class="ui-header ui-bar-inherit">
+						<a  href=".menu_one" class="menu-mobile"></a>
+						<h1 id="logo" class="ui-title" role="heading" aria-level="1" style="text-align: right; margin: 0 1em;">Eat&Share</h1>
+						<!-- <a id="icon-home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-home"></a> -->
+					</header>
+
+				<menu>
+						<h2 id="list-item-logo">Witaj w Eat&Share</h2>
+						<ul id="listView" class="list">
+							<li><a href="#home">Home</a></li>
+							<li class="list-item-active"><a href="#addrestaurant">Dodaj lokal</a></li>
+							<li><a href="#addprice">Dodaj cenę</a></li>
+							<li><a href="#accountfav">Twoje konto</a></li>
+							<li><a href="#login">Wyloguj</a></li>
+							<li><a href="#authors">O autorach</a></li>
+						</ul>
+						<div class="footer">
+									<p>Thank you for your visit! Eat&Share &copy; 2018</p>
+						</div>
+					</menu>
 	
 		</div>
 
 		<div data-role="page" id="addprice">
+				<header data-role="header" role="banner" class="ui-header ui-bar-inherit">
+						<a  href=".menu_one" class="menu-mobile"></a>
+						<h1 id="logo" class="ui-title" role="heading" aria-level="1" style="text-align: right; margin: 0 1em;">Eat&Share</h1>
+						<!-- <a id="icon-home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-home"></a> -->
+					</header>
+
+				<menu>
+						<h2 id="list-item-logo">Witaj w Eat&Share</h2>
+						<ul id="listView" class="list">
+							<li class="list-item-active"><a href="#home">Home</a></li>
+							<li><a href="#addrestaurant">Dodaj lokal</a></li>
+							<li class="list-item-active"><a href="#addprice">Dodaj cenę</a></li>
+							<li><a href="#accountfav">Twoje konto</a></li>
+							<li><a href="#login">Wyloguj</a></li>
+							<li><a href="#authors">O autorach</a></li>
+						</ul>
+						<div class="footer">
+									<p>Thank you for your visit! Eat&Share &copy; 2018</p>
+						</div>
+					</menu>
+	
+		</div>
+
+		<div data-role="page" id="authors">
+				<header data-role="header" role="banner" class="ui-header ui-bar-inherit">
+						<a  href=".menu_one" class="menu-mobile"></a>
+						<h1 id="logo" class="ui-title" role="heading" aria-level="1" style="text-align: right; margin: 0 1em;">Eat&Share</h1>
+						<!-- <a id="icon-home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-home"></a> -->
+					</header>
+
+				<menu>
+						<h2 id="list-item-logo">Witaj w Eat&Share</h2>
+						<ul id="listView" class="list">
+							<li><a href="#home">Home</a></li>
+							<li><a href="#addrestaurant">Dodaj lokal</a></li>
+							<li><a href="#addprice">Dodaj cenę</a></li>
+							<li><a href="#accountfav">Twoje konto</a></li>
+							<li><a href="#login">Wyloguj</a></li>
+							<li class="list-item-active"><a href="#">O autorach</a></li>
+						</ul>
+						<div class="footer">
+									<p>Thank you for your visit! Eat&Share &copy; 2018</p>
+						</div>
+					</menu>
 	
 		</div>
 	
