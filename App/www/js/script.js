@@ -28,4 +28,3 @@ for(var i = 0; i < switchers.length; i++) {
   }, false);
 }
 
-
