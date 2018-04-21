@@ -142,6 +142,12 @@ header, .main {
   color: #64C135;
 }
 
+#logo{
+  border: none;
+  box-shadow: none;
+  font-size: 14px;
+}
+
 .list-item-active {
   background-color: #0d0d0d;
 }
