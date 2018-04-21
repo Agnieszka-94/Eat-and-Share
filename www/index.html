@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  	<head>
+  		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    	<title>Eat&Share</title>
+	    <link rel="stylesheet" href="css/style.css">
+	    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+	    <link rel="stylesheet" href="css/jquery.mobile.icons.min" />
+	    <script src="cordova.js"></script>
+	    <script src="js/jquery-2.1.4.min.js"></script>
+	    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+  	</head>
+	
+	<body onload="init()" class="ui-mobile-viewport ui-overlay-a">
+
+		<div data-role="page">
+		    <header data-role="header" role="banner" class="ui-header ui-bar-inherit">
+		      <a  href=".menu_one" class="menu-mobile"></a>
+		      <h1 id="logo" class="ui-title" role="heading" aria-level="1" style="text-align: right; margin: 0 1em;">Eat&Share</h1>
+		      <!-- <a id="icon-home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-home"></a> -->
+		    </header>
+
+		    <menu>
+		      <h2 id="list-item-logo">Witaj w Eat&Share</h2>
+		      <ul id="listView" class="list">
+		        <li class="list-item-active"><a href="#">Home</a></li>
+		        <li><a href="#">Dodaj lokal</a></li>
+		        <li><a href="#">Dodaj cenę</a></li>
+		        <li><a href="#">Twoje konto</a></li>
+		        <li><a href="#">Wyloguj</a></li>
+		        <li><a href="#">O autorach</a></li>
+		      </ul>
+		      <div class="footer">
+		            <p>Thank you for your visit! Eat&Share &copy; 2018</p>
+		      </div>
+		    </menu>
+
+		    <section class="main">
+		        <div class='card'>
+		          <div id="loginpage" class='face'>
+		            <h2>Logowanie</h2>
+		            <form>
+		              <input type='text' placeholder='Login'>
+		              <input type='text' placeholder='Hasło'>
+		              <input type='submit' value='Zaloguj się' class='btn'>
+		            </form>
+		            <button class="btn2"><i class="fa fa-facebook fa-lg"></i>Zaloguj się przez Facebook</button>
+		            <p>Jeśli nie masz jeszcze konta, zarejestruj się!</p>
+		            <button class="switch btn">Zarejestruj się</button>
+		          </div>
+
+		          <div id="registrationpage" class='face'>
+		            <h2>Rejestracja</h2>
+		            <form>
+		              <input type='text' placeholder='Wpisz email'>
+		              <input type='text' placeholder='Wpisz hasło'>
+		              <input type='text' placeholder='Powtórz hasło'>
+		              <input type='submit' value='Zarejestruj się' class='btn'>
+		            </form>
+		            <button class='switch btn'>Zaloguj się</button>
+		          </div>
+		        </div>
+		    </section>
+		</div>
+
+
+		<div data-role="page" id="home">
+
+		</div>
+
+		<div data-role="page" id="showmetheway">
+
+		</div>
+	
+		<div data-role="page" id="accountfav">
+	
+		</div>
+	
+		<div data-role="page" id="accountvisit">
+	
+		</div>
+
+		<div data-role="page" id="addrestaurant">
+	
+		</div>
+
+		<div data-role="page" id="addprice">
+	
+		</div>
+	
+		<script src="js/script.js"></script>	
+	</body>
+</html>
