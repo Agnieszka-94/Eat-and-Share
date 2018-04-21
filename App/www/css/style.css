@@ -246,5 +246,34 @@ p { padding: 1em; text-align: center; }
 #addrestaurantmap {
   width: auto; 
   height: 200px; 
-  border: 1px solid black; 
+  border: 1px solid gray; 
 } 
+
+#show-way-map {
+  position: absolute;
+    top: 40px;
+    left: 0;
+    bottom: 1px;
+    right: 0;
+} 
+
+#cena {
+  margin-left: 50%;
+  display: inline;
+  padding: 10px;
+  color: #64C135;
+}
+
+#arrow-right {
+  float: right;
+  width: 50px;
+}
+
+#nazwalokalu {
+  padding: 20px;
+}
+
+.restaurantlist {
+  display: block;
+  border-top: 0.5px solid black;
+}

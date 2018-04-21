@@ -103,7 +103,7 @@
 				<div class="restaurantlist">
 					<h4 id="nazwalokalu">Nazwa lokalu</h4>
 					<p id="cena">Cena</p>
-					<a href="#showmetheway">Pokaż drogę(ikona)</a>
+					<a href="#showmetheway"><img id="arrow-right" src="img/Arrow-Right.png"></a>
 				</div>
 				</section>
 		</div>
@@ -131,7 +131,21 @@
 							</div>
 						</menu>
 
-
+						<div id="show-way-map">
+							<script src="https://maps.googleapis.com/maps/api/js"></script>
+									<script>
+										function initialize() {
+											var map_canvas = document.getElementById('show-way-map');
+											var map_options = {
+												center: new google.maps.LatLng(50.0530682,19.9564987),
+												zoom: 13,
+												mapTypeId: google.maps.MapTypeId.ROADMAP
+											}
+											var map = new google.maps.Map(map_canvas, map_options);
+										}
+										google.maps.event.addDomListener(window, 'load', initialize);
+									</script>
+						</div>
 		</div>
 	
 		<div data-role="page" id="accountfav">
