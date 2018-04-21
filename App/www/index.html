@@ -8,7 +8,9 @@
 	    <link rel="stylesheet" href="css/jquery.mobile.icons.min" />
 	    <script src="cordova.js"></script>
 	    <script src="js/jquery-2.1.4.min.js"></script>
-	    <script src="js/jquery.mobile-1.4.5.min.js"></script>
+		<script src="js/jquery.mobile-1.4.5.min.js"></script>
+		<script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+
   	</head>
 	
 	<body onload="init()" class="ui-mobile-viewport ui-overlay-a">
@@ -69,7 +71,6 @@
 				<header data-role="header" role="banner" class="ui-header ui-bar-inherit">
 						<a  href=".menu_one" class="menu-mobile"></a>
 						<h1 id="logo" class="ui-title" role="heading" aria-level="1" style="text-align: right; margin: 0 1em;">Eat&Share</h1>
-						<a id="icon-home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-home"></a>
 					</header>
 
 					<menu>
@@ -86,9 +87,27 @@
 		            <p>Thank you for your visit! Eat&Share &copy; 2018</p>
 		      </div>
 				</menu>
+
+			<section class="main">
+			<form>
+    			<div class="ui-field-contain">
+      				  <div data-role="rangeslider">
+           				<label for="range-7a">Ustal zakres cenowy:</label>
+            			<input name="range-7a" id="range-7a" min="0" max="100" value="0" type="range">
+            			<label for="range-7b">Ustal zakres cenowy:</label>
+            			<input name="range-7b" id="range-7b" min="0" max="100" value="100" type="range">
+        			</div>
+				</div>
+				</form>
+				<button>Wyszukaj</button>
+
+				<div class="restaurantlist">
 				
+				</div>
+				</section>
 
 
+			
 		</div>
 
 		<div data-role="page" id="showmetheway">
@@ -102,7 +121,7 @@
 					<menu>
 							<h2 id="list-item-logo">Witaj w Eat&Share</h2>
 							<ul id="listView" class="list">
-								<a href="#home">Home</a></li>
+								<li><a href="#home">Home</a></li>
 								<li><a href="#addrestaurant">Dodaj lokal</a></li>
 								<li><a href="#addprice">Dodaj cenę</a></li>
 								<li><a href="#accountfav">Twoje konto</a></li>
@@ -115,8 +134,6 @@
 						</menu>
 
 
-
-
 		</div>
 	
 		<div data-role="page" id="accountfav">
@@ -124,7 +141,15 @@
 						<a  href=".menu_one" class="menu-mobile"></a>
 						<h1 id="logo" class="ui-title" role="heading" aria-level="1" style="text-align: right; margin: 0 1em;">Eat&Share</h1>
 						<!-- <a id="icon-home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-home"></a> -->
+						<h id="username">Nazwa użytkownika</h>
+						<div data-role="navbar">
+							<ul>
+									<li><a href="#accountfav" class="ui-btn-active">Ulubione</a></li>
+									<li><a href="#accountvisit" class="ui-btn-active">Chcę odwiedzić</a></li>
+							</ul>
+						</div>
 					</header>
+
 
 				<menu>
 						<h2 id="list-item-logo">Witaj w Eat&Share</h2>
@@ -148,6 +173,13 @@
 						<a  href=".menu_one" class="menu-mobile"></a>
 						<h1 id="logo" class="ui-title" role="heading" aria-level="1" style="text-align: right; margin: 0 1em;">Eat&Share</h1>
 						<!-- <a id="icon-home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-home"></a> -->
+						<h id="username">Nazwa użytkownika</h>
+						<div data-role="navbar">
+							<ul>
+									<li><a href="#accountfav">Ulubione</a></li>
+									<li><a href="#accountvisit" class="ui-btn-active">Chcę odwiedzić</a></li>
+							</ul>
+						</div>
 					</header>
 
 				<menu>
@@ -171,7 +203,13 @@
 				<header data-role="header" role="banner" class="ui-header ui-bar-inherit">
 						<a  href=".menu_one" class="menu-mobile"></a>
 						<h1 id="logo" class="ui-title" role="heading" aria-level="1" style="text-align: right; margin: 0 1em;">Eat&Share</h1>
-						<!-- <a id="icon-home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-home"></a> -->
+						<h id="username">Nazwa użytkownika</h>
+						<div data-role="navbar">
+							<ul>
+									<li><a href="#addrestaurant" class="ui-btn-active">Dodaj lokal</a></li>
+									<li><a href="#addprice">Dodaj cenę</a></li>
+							</ul>
+						</div>
 					</header>
 
 				<menu>
@@ -195,7 +233,13 @@
 				<header data-role="header" role="banner" class="ui-header ui-bar-inherit">
 						<a  href=".menu_one" class="menu-mobile"></a>
 						<h1 id="logo" class="ui-title" role="heading" aria-level="1" style="text-align: right; margin: 0 1em;">Eat&Share</h1>
-						<!-- <a id="icon-home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-home"></a> -->
+						<h3 id="username">Nazwa użytkownika</h3>
+						<div data-role="navbar">
+							<ul>
+									<li><a href="#addrestaurant">Dodaj lokal</a></li>
+									<li><a href="#addprice" class="ui-btn-active">Dodaj cenę</a></li>
+							</ul>
+						</div>
 					</header>
 
 				<menu>
@@ -212,6 +256,17 @@
 									<p>Thank you for your visit! Eat&Share &copy; 2018</p>
 						</div>
 					</menu>
+
+					<section class="main">
+								
+							<label for="select-choice-1" class="select">Wybierz lokal:</label>
+							<select name="select-choice-1" id="select-choice-1">
+								<option value="nazwalokalu1">Nazwa lokalu1</option>
+							</select>
+							<label for="number-pattern">Wprowadź cenę:</label>
+							<input name="number" id="number-pattern" value="" type="number">
+							<input value="Dodaj" type="submit">
+					</section>
 	
 		</div>
 

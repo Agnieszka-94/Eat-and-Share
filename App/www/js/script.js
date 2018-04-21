@@ -27,3 +27,5 @@ for(var i = 0; i < switchers.length; i++) {
     c.classList.toggle('flipped');
   }, false);
 }
+
+
