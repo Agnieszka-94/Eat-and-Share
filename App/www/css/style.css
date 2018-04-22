@@ -19,6 +19,8 @@ body {
 header {
   overflow: hidden;
   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  background-color: #1e1e1e;
+  border-top:none;
 }
 
 header h1 {
@@ -64,8 +66,8 @@ header input {
   margin: 7px auto;
   width: 50%;
   height: 0.20em;
-  background: #1e1e1e;
-  box-shadow: 0 .45em 0 0 #1e1e1e, 0 .9em 0 0 #1e1e1e;
+  background: #fff;
+  box-shadow: 0 .45em 0 0 #fff, 0 .9em 0 0 #fff;
 }
 
 menu {

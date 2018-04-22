@@ -540,8 +540,7 @@ legend,.ui-input-text input,.ui-input-search input{
     background-size:2.875em 2.875em
 }
 .ui-bar-a,.ui-page-theme-a .ui-bar-inherit,html .ui-bar-a .ui-bar-inherit,html .ui-body-a .ui-bar-inherit,html body .ui-group-theme-a .ui-bar-inherit{
-    border-color:#ddd;
-    color:#333;
+    color: #fff;
     font-weight:700
 }
 .ui-bar-a{
@@ -823,7 +822,6 @@ body.ui-mobile-viewport,div.ui-mobile-viewport{
 }
 .ui-header,.ui-footer{
     border-width:1px 0;
-    border-style:solid;
     position:relative
 }
 .ui-header:empty,.ui-footer:empty{
