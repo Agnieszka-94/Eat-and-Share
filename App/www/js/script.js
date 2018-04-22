@@ -9,6 +9,10 @@ $(document).ready(function(){
 	});
 })
 
+$("menu li").click(function () {
+  $(".menu-active").fadeout();
+});
+
 $(function() {
   $("#listView li").click(function () {
     if ( $("#listView li").hasClass("list-item-active") ) {
@@ -17,6 +21,8 @@ $(function() {
     $(this).addClass("list-item-active");
   });
 });
+
+
 
 
 var c = document.querySelector('.card'), 
