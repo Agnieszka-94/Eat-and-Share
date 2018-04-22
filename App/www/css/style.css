@@ -47,91 +47,6 @@ header input {
   margin-bottom: 20px;
 }
 
-.menu-mobile {
-  width: 40px;
-  height: 32px;
-  display: inline-block;
-  vertical-align: middle;
-  position: relative;
-  text-indent: -9999px;
-  overflow: hidden;
-  cursor: pointer;
-  box-shadow: none !important;
-  border: none !important;
-}
-
-.menu-mobile:before {
-  content: "";
-  display: block;
-  margin: 7px auto;
-  width: 50%;
-  height: 0.20em;
-  background: #fff;
-  box-shadow: 0 .45em 0 0 #fff, 0 .9em 0 0 #fff;
-}
-
-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  width: 15em;
-  height: 100%;
-  padding-top: 10px;
-  box-shadow: inset -5px -10px 10px 0 rgba(0,0,0,.3);
-  background-color: #1e1e1e;
-  text-transform: uppercase;
-  overflow: auto;
-}
-
-menu li a {
-  display: block;
-  margin: 0 10px;
-  color: #FFF;
-  display: block;
-  padding: 20px;
-  color: #fff;
-  font-family: sans-serif;
-  font-size: 1.1em;
-  text-decoration: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.5);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-  -webkit-transition: all .20s ease;
-  -moz-transition: all .20s ease;
-  -o-transition: all .20s ease;
-  transition: all .20s ease;
-}
-
-
-menu {
-  -webkit-transform: translateX(-15em);
-  -moz-transform: translateX(-15em);
-  -ms-transform: translateX(-15em);
-  transform: translateX(-15em);
-  -webkit-transition: all .25s linear;
-  -moz-transition: all .25s linear;
-  -ms-transition: all .25s linear;
-  transition: all .25s linear;
-}
-
-header, .main {
-  -webkit-transform: translateX(0);
-  -moz-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
-  -webkit-transition: all .25s linear;
-  -moz-transition: all .25s linear;
-  -ms-transition: all .25s linear;
-  transition: all .25s linear;
-}
-
-.menu-active menu {
-  -webkit-transform: translateX(0);
-  -moz-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
-}
-
 .menu-active header, 
 .menu-active .main {
   -webkit-transform: translateX(15em);
@@ -278,4 +193,43 @@ p { padding: 1em; text-align: center; }
 .restaurantlist {
   display: block;
   border-top: 0.5px solid black;
+}
+
+.menu-mobile{
+  position: relative;
+  top: 0px;
+  float: left;
+  cursor: pointer;
+}
+
+.menu-mobile.active{
+  left: 15em;
+}
+
+.menu-hide{
+  left: -15em;
+  width: 15em;
+  height: 100%;
+  position: fixed;
+  z-index: 10;
+  top: 0px;
+  text-transform: uppercase;
+}
+
+.menu-hide.show{
+  left: 0px;
+  background-color: #1e1e1e;
+  box-shadow: inset -5px -10px 10px 0 rgba(0,0,0,.3);
+  background-color: #1e1e1e;
+  text-transform: uppercase;
+  padding-top: 10px;
+  overflow: auto;
+}
+
+div.menu-mobile > button {
+  width: 30px;
+  height: 30px;
+  background-color: #1e1e1e;
+  box-shadow: none;
+  border: none;
 }
