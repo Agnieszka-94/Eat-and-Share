@@ -3,15 +3,11 @@ function init() {
 }
 
 $(document).ready(function(){
-  $('.menu-mobile').click(function(){
-    $('.menu-hide').toggleClass('show');
-    $('.menu-mobile').toggleClass('active');
+  $('.menu-mobile').on('click touchstart', function(e){
+    $('html').toggleClass('menu-active');
+      e.preventDefault();
   });
-  $('a').click(function(){
-    $('.menu-hide').removeClass('show');
-    $('.menu-mobile').removeClass('active');
-  });
-});
+})
 
 var c = document.querySelector('.card'), 
     switchers = c.querySelectorAll('.switch');

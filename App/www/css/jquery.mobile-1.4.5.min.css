@@ -569,17 +569,14 @@ legend,.ui-input-text input,.ui-input-search input{
 .ui-page-theme-a a:visited,html .ui-bar-a a:visited,html .ui-body-a a:visited,html body .ui-group-theme-a a:visited{
     color: #fff /*{a-link-visited}*/;
     border-color: #1e1e1e;
-    box-shadow: inset -5px -10px 10px 0 rgba(0,0,0,.3);
 }
 .ui-page-theme-a a:hover,html .ui-bar-a a:hover,html .ui-body-a a:hover,html body .ui-group-theme-a a:hover{
 	color: #fff /*{a-link-hover}*/;
 	border-color: #1e1e1e;
-    box-shadow: inset -5px -10px 10px 0 rgba(0,0,0,.3);
 }
 .ui-page-theme-a a:active,html .ui-bar-a a:active,html .ui-body-a a:active,html body .ui-group-theme-a a:active{
 	color: #fff /*{a-link-active}*/;
 	border-color: #1e1e1e;
-    box-shadow: inset -5px -10px 10px 0 rgba(0,0,0,.3);
 }
 .ui-page-theme-a .ui-btn,html .ui-bar-a .ui-btn,html .ui-body-a .ui-btn,html body .ui-group-theme-a .ui-btn,html head+body .ui-btn.ui-btn-a,.ui-page-theme-a .ui-btn:visited,html .ui-bar-a .ui-btn:visited,html .ui-body-a .ui-btn:visited,html body .ui-group-theme-a .ui-btn:visited,html head+body .ui-btn.ui-btn-a:visited{
 }
