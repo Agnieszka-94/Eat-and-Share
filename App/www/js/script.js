@@ -4,15 +4,14 @@ function init() {
 
 $(document).ready(function(){
   $('.menu-mobile').click(function(){
-    $('html').toggleClass('menu-active');
-    e.preventDefault();
+    $('.menu-hide').toggleClass('show');
+    $('.menu-mobile').toggleClass('active');
   });
   $('a').click(function(){
-    $('html').removeClass('menu-active');
-    e.preventDefault();
+    $('.menu-hide').removeClass('show');
+    $('.menu-mobile').removeClass('active');
   });
 });
-
 
 var c = document.querySelector('.card'), 
     switchers = c.querySelectorAll('.switch');
