@@ -9,22 +9,6 @@ $(document).ready(function(){
 	});
 })
 
-$("menu li").click(function () {
-  $(".menu-active").fadeout();
-});
-
-$(function() {
-  $("#listView li").click(function () {
-    if ( $("#listView li").hasClass("list-item-active") ) {
-      $("#listView li").removeClass("list-item-active");
-    }
-    $(this).addClass("list-item-active");
-  });
-});
-
-
-
-
 var c = document.querySelector('.card'), 
     switchers = c.querySelectorAll('.switch');
 
