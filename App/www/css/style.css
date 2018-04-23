@@ -279,3 +279,11 @@ div.menu-mobile > button {
   box-shadow: none;
   border: none;
 }
+
+.footer {
+  color: #fff;
+  bottom: 0;
+  position: fixed;
+  font-size: 12px;
+  text-transform: none;
+}
