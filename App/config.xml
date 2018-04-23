@@ -5,6 +5,7 @@
         version     = "1.0.0" >
 
     <name>Eat and Share</name>
+    <icon src="merges/android/favicon.png" platform="android" width="57" height="57" density="mdpi" />
     <description>Student team project for BAI classes</description>
     <author href="" email="">
 		Barbara Nogaś, Agnieszka Tuleta, Przemysław Krzyżak, Jakub Woźniak
