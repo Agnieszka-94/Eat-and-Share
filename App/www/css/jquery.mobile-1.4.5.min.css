@@ -2275,6 +2275,8 @@ ul.ui-grid-a,ul.ui-grid-b,ul.ui-grid-c,ul.ui-grid-d,ul.ui-grid-solo,li.ui-block-
 }
 .ui-header .ui-title~.ui-navbar .ui-btn,.ui-footer .ui-title~.ui-navbar .ui-btn,.ui-header .ui-navbar .ui-grid-duo .ui-btn,.ui-footer .ui-navbar .ui-grid-duo .ui-btn,.ui-header .ui-title~.ui-navbar .ui-grid-duo .ui-block-a:first-child .ui-btn,.ui-footer .ui-title~.ui-navbar .ui-grid-duo .ui-block-a:first-child .ui-btn,.ui-header .ui-title~.ui-navbar .ui-grid-duo .ui-block-a:first-child+.ui-block-b .ui-btn,.ui-footer .ui-title~.ui-navbar .ui-grid-duo .ui-block-a:first-child+.ui-block-b .ui-btn{
     border-top-width:1px
+	border-color: #1e1e1e;
+	color: inherit;
 }
 .ui-input-btn input{
     position:absolute;
