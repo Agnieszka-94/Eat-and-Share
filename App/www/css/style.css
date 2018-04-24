@@ -249,9 +249,11 @@ p { padding: 1em; text-align: center; }
 
 #cena {
   margin-left: 50%;
-  display: inline;
+  display: inline-block;
   padding: 10px;
+  padding-bottom: 5px;
   color: #64C135;
+  font-size: 25px;
 }
 
 #arrow-right {
@@ -268,6 +270,20 @@ p { padding: 1em; text-align: center; }
   border-top: 0.5px solid black;
 }
 
+#dodaj {
+  text-align: left;
+  margin-bottom: 0px;
+  margin-left: 0.35em;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+  
+.smallbtn {
+  display: inline-block !important;
+  margin-left: 1.25em;
+  padding: 0px;
+}
+  
 div.menu-mobile > button {
   width: 30px;
   height: 30px;
