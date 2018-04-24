@@ -43,13 +43,6 @@ header input {
   margin-bottom: 20px;
 }
 
-.menu-active header, 
-.menu-active .main {
-  -webkit-transform: translateX(15em);
-  -moz-transform: translateX(15em);
-  -ms-transform: translateX(15em);
-  transform: translateX(15em);
-}
 .menu-mobile {
   width: 40px;
   height: 32px;
@@ -59,14 +52,12 @@ header input {
   text-indent: -9999px;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: none !important;
-  border: none !important;
 }
 
 .menu-mobile:before {
   content: "";
   display: block;
-  margin: 7px auto;
+  margin: 12px auto;
   width: 50%;
   height: 0.20em;
   background: #fff;
@@ -78,43 +69,11 @@ menu {
   top: 0;
   left: 0;
   z-index: 1;
-  width: 15em;
-  height: 100%;
-  padding-top: 10px;
   box-shadow: inset -5px -10px 10px 0 rgba(0,0,0,.3);
-  background-color: #1e1e1e;
-  text-transform: uppercase;
-  overflow: auto;
-}
-
-menu li a {
-  display: block;
-  margin: 0 10px;
-  color: #FFF;
-  display: block;
-  padding: 20px;
-  color: #fff;
-  font-family: sans-serif;
-  font-size: 1.1em;
-  text-decoration: none;
-  border-top: 1px solid rgba(0, 0, 0, 0.5);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-  -webkit-transition: all .20s ease;
-  -moz-transition: all .20s ease;
-  -o-transition: all .20s ease;
-  transition: all .20s ease;
-}
-
-
-menu {
   -webkit-transform: translateX(-15em);
   -moz-transform: translateX(-15em);
   -ms-transform: translateX(-15em);
   transform: translateX(-15em);
-  -webkit-transition: all .25s linear;
-  -moz-transition: all .25s linear;
-  -ms-transition: all .25s linear;
-  transition: all .25s linear;
 }
 
 header, .main {
@@ -126,6 +85,35 @@ header, .main {
   -moz-transition: all .25s linear;
   -ms-transition: all .25s linear;
   transition: all .25s linear;
+}
+
+.menu{
+  position: fixed;
+  z-index: 100;
+  top: 0px;
+  left: 0px;
+}
+
+.menu-hide{
+  width: 15em;
+  left: -15em;
+  height: 100%;
+  position: fixed;
+  z-index: 10;
+  top: 0px;
+  text-transform: uppercase;
+}
+
+.menu-hide.show{
+  left: 0px;
+  background-color: #1e1e1e;
+  text-transform: uppercase;
+  overflow: auto;
+  padding-top: 10px;
+  box-shadow: inset -5px -10px 10px 0 rgba(0,0,0,.3);
+  background-color: #1e1e1e;
+  z-index: 1;
+  position: fixed;
 }
 
 .menu-active menu {
@@ -161,10 +149,6 @@ header, .main {
   text-decoration: none;
   border-top: 1px solid rgba(0, 0, 0, 0.5);
   border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-  -webkit-transition: all .20s ease;
-  -moz-transition: all .20s ease;
-  -o-transition: all .20s ease;
-  transition: all .20s ease;
 }
 
 #list-item-logo {

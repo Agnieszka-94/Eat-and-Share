@@ -3,11 +3,17 @@ function init() {
 }
 
 $(document).ready(function(){
-  $('.menu-mobile').on('click touchstart', function(e){
+  $('.menu').click(function(){
+    $('.menu-hide').toggleClass('show');
+    $('.menu').toggleClass('active');
     $('html').toggleClass('menu-active');
-      e.preventDefault();
   });
-})
+  $('a').click(function(){
+    $('.menu-hide').removeClass('show');
+    $('.menu').removeClass('active');
+	$('html').removeClass('menu-active');
+  });
+});
 
 var c = document.querySelector('.card'), 
     switchers = c.querySelectorAll('.switch');
@@ -17,4 +23,3 @@ for(var i = 0; i < switchers.length; i++) {
     c.classList.toggle('flipped');
   }, false);
 }
-
