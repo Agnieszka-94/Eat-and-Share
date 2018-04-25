@@ -25,6 +25,7 @@ header h1 {
   text-align: center;
   font-size: 1.5em;
 }
+
 h1 a {color: #FFF; text-decoration: none;}
 
 header input {
@@ -48,7 +49,6 @@ header input {
   height: 32px;
   display: inline-block;
   vertical-align: middle;
-  position: relative;
   text-indent: -9999px;
   overflow: hidden;
   cursor: pointer;
@@ -64,27 +64,7 @@ header input {
   box-shadow: 0 .45em 0 0 #fff, 0 .9em 0 0 #fff;
 }
 
-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1;
-  box-shadow: inset -5px -10px 10px 0 rgba(0,0,0,.3);
-  -webkit-transform: translateX(-15em);
-  -moz-transform: translateX(-15em);
-  -ms-transform: translateX(-15em);
-  transform: translateX(-15em);
-}
-
 header, .main {
-  -webkit-transform: translateX(0);
-  -moz-transform: translateX(0);
-  -ms-transform: translateX(0);
-  transform: translateX(0);
-  -webkit-transition: all .25s linear;
-  -moz-transition: all .25s linear;
-  -ms-transition: all .25s linear;
-  transition: all .25s linear;
 }
 
 .menu{
@@ -102,6 +82,8 @@ header, .main {
   z-index: 10;
   top: 0px;
   text-transform: uppercase;
+  background-color: #1e1e1e;
+
 }
 
 .menu-hide.show{
