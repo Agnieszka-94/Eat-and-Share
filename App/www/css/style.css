@@ -68,10 +68,9 @@ header, .main {
 }
 
 .menu{
-  position: fixed;
+  position: relative;
   z-index: 100;
-  top: 0px;
-  left: 0px;
+  float: left;
 }
 
 .menu-hide{
