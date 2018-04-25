@@ -23,3 +23,8 @@ for(var i = 0; i < switchers.length; i++) {
     c.classList.toggle('flipped');
   }, false);
 }
+ 
+$(document).ready(function() {
+	$('.restaurantlist li:even').css('background-color', '#f2f2f2');
+	$('.restaurantlist li:odd').css('background-color', 'inherit');
+}); 

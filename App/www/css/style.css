@@ -203,6 +203,8 @@ p { padding: 1em; text-align: center; }
   width: auto; 
   height: 200px; 
   border: 1px solid gray; 
+  margin-top: 10px;
+  margin-bottom: 30px;
 } 
 
 #show-way-map {
@@ -212,6 +214,16 @@ p { padding: 1em; text-align: center; }
     bottom: 1px;
     right: 0;
 } 
+
+.restaurantlist {
+  list-style-type: none;
+}
+
+.restaurant {
+  display: block;  
+  margin-left: -30px;
+  margin-right: -30px;
+}
 
 #cena {
   margin-left: 50%;
@@ -231,23 +243,24 @@ p { padding: 1em; text-align: center; }
   padding: 20px;
 }
 
-.restaurantlist {
-  display: block;
-  border-top: 0.5px solid black;
-}
-
 #dodaj {
   text-align: left;
-  margin-bottom: 0px;
-  margin-left: 0.35em;
+  margin: 0px;
+  padding-left: 20px;
   padding-bottom: 0px;
   padding-top: 0px;
 }
   
-.smallbtn {
+.smallbtns-container {
   display: inline-block !important;
-  margin-left: 1.25em;
-  padding: 0px;
+  text-align: center !important;
+  padding-left: 8px;
+}
+
+.smallbtn {
+  background-color: #fff !important;
+  border: 0.5px solid #1e1e1e !important;
+  margin: 12px !important;
 }
   
 div.menu-mobile > button {
