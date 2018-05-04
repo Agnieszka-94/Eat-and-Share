@@ -1,7 +1,3 @@
-(function () {
-    "use strict";
-    var user;
-
     document.addEventListener( 'deviceready', onDeviceReady.bind( this ), false );
 
     function onDeviceReady() {
@@ -14,7 +10,6 @@
         initMenus();
     };
 
-    function initMenus() {
         $('.menu').click(function () {
             $('.menu-hide').toggleClass('show');
             $('.menu').toggleClass('active');
@@ -39,7 +34,6 @@
         $('.restaurantlist li:even').css('background-color', '#f2f2f2');
         $('.restaurantlist li:odd').css('background-color', 'inherit');
 
-    }
 
     function userLoggedInHandler() {
         $.mobile.changePage("#home");
@@ -185,4 +179,4 @@
     function onResume() {
         // TODO: Ta aplikacja została ponownie aktywowana. Przywróć tutaj stan aplikacji.
     };
-} )();
+
