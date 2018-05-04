@@ -5,7 +5,7 @@
     document.addEventListener( 'deviceready', onDeviceReady.bind( this ), false );
 
     function onDeviceReady() {
-        // Obs³uga zdarzeñ wstrzymywania i wznawiania dzia³ania oprogramowania Cordova
+        // Obsługa zdarzeń wstrzymywania i wznawiania działania oprogramowania Cordova
         document.addEventListener( 'pause', onPause.bind( this ), false );
         document.addEventListener('resume', onResume.bind(this), false);
         initializeFirebase();
@@ -14,6 +14,7 @@
         initMenus();
     };
 
+    function initMenus() {
         $('.menu').click(function () {
             $('.menu-hide').toggleClass('show');
             $('.menu').toggleClass('active');
@@ -38,7 +39,7 @@
         $('.restaurantlist li:even').css('background-color', '#f2f2f2');
         $('.restaurantlist li:odd').css('background-color', 'inherit');
 
-    
+    }
 
     function userLoggedInHandler() {
         $.mobile.changePage("#home");
@@ -75,7 +76,11 @@
     }
 
     function bindEvents() {
-        //===== membeship events ===== 
+        //===== membeship events =====
+        $('#sign-in-google').on("click", authWithGoogle);
+        $('#sign-in-email').on("click", authWithEmail);
+        $('#sign-in-facebook').on("click", authWithFacebook);
+        $('#log-in-email').on("click", loginWithEmailEvt);
         $('.logout').on("click", logout); 
     }
 
@@ -94,16 +99,78 @@
     function initializeFirebase() {
         // Initialize Firebase
         var fireBaseConfig = {
-            apiKey: ""
-            authDomain: "",
-            databaseURL: "",
-            projectId: "",
-            storageBucket: "",
-            messagingSenderId: ""
+            apiKey: "AIzaSyAN9Ux8Z0TANV8CjbX3aDplBk46ueioeEc",
+            authDomain: "eatandshare-27eec.firebaseapp.com",
+            databaseURL: "https://eatandshare-27eec.firebaseio.com",
+            projectId: "eatandshare-27eec",
+            storageBucket: "eatandshare-27eec.appspot.com",
+            messagingSenderId: "1031494816944"
         };
         firebase.initializeApp(fireBaseConfig);
         console.log("Firebase app is initialized");
-    } 
+    }
+
+    function authWithGoogle() { 
+        var provider = new firebase.auth.GoogleAuthProvider();
+        authUsingProvider(provider);
+    }
+
+    function authWithFacebook() {
+        var provider = new firebase.auth.FacebookAuthProvider();
+        authUsingProviderPopUp(provider);
+    }
+
+    function authUsingProvider(providerToAuth) {
+        firebase.auth().signInWithRedirect(providerToAuth).then(function () {
+            return firebase.auth().getRedirectResult();
+        }).then(function (result) {
+            // This gives you a Google Access Token.
+            // You can use it to access the Google API.
+            var token = result.credential.accessToken;
+            // The signed-in user info.
+            user = result.user;
+            // ...
+            }).catch(handleErrorWithAlert); 
+    }
+
+    function authUsingProviderPopUp(providerToAuth) {
+        firebase.auth().signInWithPopup(providerToAuth).then(function (result) { 
+            // This gives you a Google Access Token.
+            // You can use it to access the Google API.
+            var token = result.credential.accessToken;
+            // The signed-in user info.
+            user = result.user;
+            // ...
+        }).catch(handleErrorWithAlert);
+    }
+
+    function authWithEmail() { 
+        var usrEmail = document.getElementById('singinEmailField').value;
+        var usrPassword = document.getElementById('singinPasswordField').value;
+        var usrPassword2 = document.getElementById('singinPasswordField2').value;
+        if (usrPassword != usrPassword2) {
+            alert("Hasła się nie zgadzają");
+            return;
+        } else {
+            firebase.auth().createUserWithEmailAndPassword(usrEmail, usrPassword)
+                .catch(handleErrorWithAlert);
+        }
+    }
+
+    function loginWithEmailEvt() {
+        var usrEmail = $('#loginField').val();
+        var usrPassword = $('#passwordField').val();
+        console.log(usrEmail + "_" + usrPassword);
+        console.log(usrEmail );
+        console.log(usrPassword);
+
+        loginWithEmail(usrEmail, usrPassword);
+    }
+    function loginWithEmail(email, password) {
+        firebase.auth().signInWithEmailAndPassword(email, password)
+            .catch(handleErrorWithAlert);
+    }
+
     function handleErrorWithAlert(error) {
         console.log("error");
         console.log(error);
@@ -112,10 +179,10 @@
     }
 
     function onPause() {
-        // TODO: Ta aplikacja zosta³a zawieszona, Zapisz tutaj stan aplikacji.
+        // TODO: Ta aplikacja została zawieszona, Zapisz tutaj stan aplikacji.
     };
 
     function onResume() {
-        // TODO: Ta aplikacja zosta³a ponownie aktywowana. Przywróæ tutaj stan aplikacji.
+        // TODO: Ta aplikacja została ponownie aktywowana. Przywróć tutaj stan aplikacji.
     };
 } )();
