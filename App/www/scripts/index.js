@@ -5,7 +5,7 @@
     document.addEventListener( 'deviceready', onDeviceReady.bind( this ), false );
 
     function onDeviceReady() {
-        // Obs³uga zdarzeñ wstrzymywania i wznawiania dzia³ania oprogramowania Cordova
+        // ObsÂ³uga zdarzeÃ± wstrzymywania i wznawiania dziaÂ³ania oprogramowania Cordova
         document.addEventListener( 'pause', onPause.bind( this ), false );
         document.addEventListener('resume', onResume.bind(this), false);
         initializeFirebase();
@@ -14,7 +14,6 @@
         initMenus();
     };
 
-    function initMenus() {
         $('.menu').click(function () {
             $('.menu-hide').toggleClass('show');
             $('.menu').toggleClass('active');
@@ -39,7 +38,7 @@
         $('.restaurantlist li:even').css('background-color', '#f2f2f2');
         $('.restaurantlist li:odd').css('background-color', 'inherit');
 
-    }
+    
 
     function userLoggedInHandler() {
         $.mobile.changePage("#home");
@@ -113,10 +112,10 @@
     }
 
     function onPause() {
-        // TODO: Ta aplikacja zosta³a zawieszona, Zapisz tutaj stan aplikacji.
+        // TODO: Ta aplikacja zostaÂ³a zawieszona, Zapisz tutaj stan aplikacji.
     };
 
     function onResume() {
-        // TODO: Ta aplikacja zosta³a ponownie aktywowana. Przywróæ tutaj stan aplikacji.
+        // TODO: Ta aplikacja zostaÂ³a ponownie aktywowana. PrzywrÃ³Ã¦ tutaj stan aplikacji.
     };
 } )();
