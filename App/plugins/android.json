@@ -1,0 +1,37 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "io.cordova.myapp66a930"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "io.cordova.myapp66a930"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "io.cordova.myapp66a930"
+        },
+        "cordova-plugin-buildinfo": {
+            "PACKAGE_NAME": "io.cordova.myapp66a930"
+        },
+        "cordova-universal-links-plugin": {
+            "PACKAGE_NAME": "io.cordova.myapp66a930"
+        },
+        "cordova-plugin-browsertab": {
+            "PACKAGE_NAME": "io.cordova.myapp66a930"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "io.cordova.myapp66a930"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "io.cordova.myapp66a930"
+        }
+    }
+}
