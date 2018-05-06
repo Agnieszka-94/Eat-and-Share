@@ -39,7 +39,7 @@ var showMeThewayMap = null;
         $('.restaurantlist li:even').css('background-color', '#f2f2f2');
         $('.restaurantlist li:odd').css('background-color', 'inherit');
     }
-    
+
     function userLoggedInHandler() {
         $.mobile.changePage("#home");
         console.log(user);
@@ -94,7 +94,7 @@ var showMeThewayMap = null;
     function initializeFirebase() {
         // Initialize Firebase
         var fireBaseConfig = {
-            apiKey: ""
+            apiKey: "",
             authDomain: "",
             databaseURL: "",
             projectId: "",
