@@ -1,6 +1,7 @@
-(function () {
-    "use strict";
-    var user;
+"use strict";
+var user;
+var marker = null;
+var showMeThewayMap = null;
 
     document.addEventListener( 'deviceready', onDeviceReady.bind( this ), false );
 
@@ -11,9 +12,10 @@
         initializeFirebase();
         onLogin();
         bindEvents();
-        initMenus();
+        $(document).ready(initMenus);     
     };
 
+    function initMenus() {
         $('.menu').click(function () {
             $('.menu-hide').toggleClass('show');
             $('.menu').toggleClass('active');
@@ -24,22 +26,20 @@
             $('.menu').removeClass('active');
             $('html').removeClass('menu-active');
         });
-
+    
         var c = document.querySelector('.card'),
             switchers = c.querySelectorAll('.switch');
-
+    
         for (var i = 0; i < switchers.length; i++) {
             switchers[i].addEventListener('click', function () {
                 c.classList.toggle('flipped');
             }, false);
         }
-
-
+    
         $('.restaurantlist li:even').css('background-color', '#f2f2f2');
         $('.restaurantlist li:odd').css('background-color', 'inherit');
-
+    }
     
-
     function userLoggedInHandler() {
         $.mobile.changePage("#home");
         console.log(user);
