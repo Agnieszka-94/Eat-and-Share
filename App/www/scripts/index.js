@@ -297,7 +297,7 @@ function initMenus() {
         var html = '<li class="restaurant"><div><h4 id= "nazwalokalu">' + reustaurantToShow.nazwa + '</h4>';
         html += '<p id="cena">' + reustaurantToShow.cena + " zł </p>";
         html += '<a class="showmetheway" data-localization="' + reustaurantToShow.lokalizacja
-            + '"><img id="arrow-right" data-localization="' + reustaurantToShow.lokalizacja+'" src="images/Arrow-Right.png"></a>'
+            + '"><img id="arrow-right" data-localization="' + reustaurantToShow.lokalizacja+'" src="image/Arrow-Right.png"></a>'
             + '<p id="dodaj" > Dodaj lokal do:</p><div class="smallbtns-container">'
             + '<button data-id="' + reustaurantToShow.key
             + '" class="smallbtn addTofavorites ui-shadow ui-btn ui-corner-all ui-btn-inline">Ulubione</button>'
