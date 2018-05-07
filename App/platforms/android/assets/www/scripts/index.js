@@ -86,9 +86,7 @@ function showMenusOnLogin() {
 
     function bindEvents() {
         //===== membeship events =====
-        $('#sign-in-google').on("click", authWithGoogle);
         $('#sign-in-email').on("click", authWithEmail);
-        $('#sign-in-facebook').on("click", authWithFacebook);
         $('#log-in-email').on("click", loginWithEmailEvt);
         $('#add-restaurant').on("click", handleAddingRestaurant);
         $('.logout').on("click", logout);
@@ -132,15 +130,6 @@ function showMenusOnLogin() {
             });
     }
 
-    function authWithGoogle() {
-        var provider = new firebase.auth.GoogleAuthProvider();
-        authUsingProvider(provider);
-    }
-
-    function authWithFacebook() {
-        var provider = new firebase.auth.FacebookAuthProvider();
-        authUsingProviderPopUp(provider);
-    }
 
     function authUsingProvider(providerToAuth) {
         firebase.auth().signInWithRedirect(providerToAuth).then(function () {
