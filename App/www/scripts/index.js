@@ -86,9 +86,7 @@ function showMenusOnLogin() {
 
     function bindEvents() {
         //===== membeship events =====
-        $('#sign-in-google').on("click", authWithGoogle);
         $('#sign-in-email').on("click", authWithEmail);
-        $('#sign-in-facebook').on("click", authWithFacebook);
         $('#log-in-email').on("click", loginWithEmailEvt);
         $('#add-restaurant').on("click", handleAddingRestaurant);
         $('.logout').on("click", logout);
@@ -130,6 +128,31 @@ function showMenusOnLogin() {
                 console.log("Error during logout");
                 handleErrorWithAlert(error);
             });
+    }
+
+
+    function authUsingProvider(providerToAuth) {
+        firebase.auth().signInWithRedirect(providerToAuth).then(function () {
+            return firebase.auth().getRedirectResult();
+        }).then(function (result) {
+            // This gives you a Google Access Token.
+            // You can use it to access the Google API.
+            var token = result.credential.accessToken;
+            // The signed-in user info.
+            user = result.user;
+            // ...
+        }).catch(handleErrorWithAlert);
+    }
+
+    function authUsingProviderPopUp(providerToAuth) {
+        firebase.auth().signInWithPopup(providerToAuth).then(function (result) {
+            // This gives you a Google Access Token.
+            // You can use it to access the Google API.
+            var token = result.credential.accessToken;
+            // The signed-in user info.
+            user = result.user;
+            // ...
+        }).catch(handleErrorWithAlert);
     }
 
     function authWithEmail() {
