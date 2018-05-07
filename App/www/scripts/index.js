@@ -132,40 +132,6 @@ function showMenusOnLogin() {
             });
     }
 
-    function authWithGoogle() {
-        var provider = new firebase.auth.GoogleAuthProvider();
-        authUsingProvider(provider);
-    }
-
-    function authWithFacebook() {
-        var provider = new firebase.auth.FacebookAuthProvider();
-        authUsingProviderPopUp(provider);
-    }
-
-    function authUsingProvider(providerToAuth) {
-        firebase.auth().signInWithRedirect(providerToAuth).then(function () {
-            return firebase.auth().getRedirectResult();
-        }).then(function (result) {
-            // This gives you a Google Access Token.
-            // You can use it to access the Google API.
-            var token = result.credential.accessToken;
-            // The signed-in user info.
-            user = result.user;
-            // ...
-        }).catch(handleErrorWithAlert);
-    }
-
-    function authUsingProviderPopUp(providerToAuth) {
-        firebase.auth().signInWithPopup(providerToAuth).then(function (result) {
-            // This gives you a Google Access Token.
-            // You can use it to access the Google API.
-            var token = result.credential.accessToken;
-            // The signed-in user info.
-            user = result.user;
-            // ...
-        }).catch(handleErrorWithAlert);
-    }
-
     function authWithEmail() {
         var usrEmail = document.getElementById('singinEmailField').value;
         var usrPassword = document.getElementById('singinPasswordField').value;
