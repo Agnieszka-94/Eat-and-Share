@@ -25,13 +25,13 @@ Aplikacja ma na celu zbieranie danych od użytkowników na temat lokali gastrono
 
 ### Prototyp
 <p align="center"><img src="Prototyp/1%20ekran%20logowania.png" alt="Ekran logowania" width="200" height="300"/>
-<img src="Prototyp/2%20ekran%20rejestracji.png" alt="Ekran rejestracji" width="200" height="300"/>
-<img src="Prototyp/3%20ekran%20home.png" alt="Ekran home" width="200" height="300"/>
-<img src="Prototyp/4%20ekran%20pokaz%20droge.png" alt="Ekran pokaż drogę" width="200" height="300"/>
-<img src="Prototyp/5%20ekran%20twoje%20konto.png" alt="Ekran twoje konto" width="200" height="300"/>
-<img src="Prototyp/6%20ekran%20dodaj%20lokal.png" alt"Ekran dodaj lokal" width="200" height="300"/>
-<img src="Prototyp/7%20ekran%20dodaj%20cene.png" alt="Ekran dodaj cenę" width="200" height="300"/>
-<img src="Prototyp/8%20hamburger%20menu.png" alt="Menu" width="200" height="300"/></p>
+<img src="Prototyp/2 ekran rejestracji.png" alt="Ekran rejestracji" width="200" height="300"/>
+<img src="Prototyp/3 ekran home.png" alt="Ekran home" width="200" height="300"/>
+<img src="Prototyp/4 ekran pokaz droge.png" alt="Ekran pokaż drogę" width="200" height="300"/>
+<img src="Prototyp/5 ekran twoje konto.png" alt="Ekran twoje konto" width="200" height="300"/>
+<img src="Prototyp/6 ekran dodaj lokal.png" alt"Ekran dodaj lokal" width="200" height="300"/>
+<img src="Prototyp/7 ekran dodaj cene.png" alt="Ekran dodaj cenę" width="200" height="300"/>
+<img src="Prototyp/8 hamburger menu.png" alt="Menu" width="200" height="300"/></p>
 
 
 [Link do systemu zarządzania projektem](https://trello.com/b/FygUN620/eatshare)
