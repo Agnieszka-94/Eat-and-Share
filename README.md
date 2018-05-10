@@ -1,5 +1,5 @@
 ### Tytuł projektu:
-<img src="App/merges/android/favicon.png" alt="Logo" width="70" height="70" align="middle"/> Eat&Share
+<img src="App/merges/android/favicon.png" alt="Logo" width="100" height="100" align="middle"/> Eat&Share
 
 ### Opis:
 
@@ -24,14 +24,14 @@ Aplikacja ma na celu zbieranie danych od użytkowników na temat lokali gastrono
 	
 
 ### Prototyp
-<p align="center"><img src="Prototyp/1%20ekran%20logowania.png" alt="Ekran logowania" width="200" height="300"/>
-<img src="Prototyp/2 ekran rejestracji.png" alt="Ekran rejestracji" width="200" height="300"/>
-<img src="Prototyp/3 ekran home.png" alt="Ekran home" width="200" height="300"/>
-<img src="Prototyp/4 ekran pokaz droge.png" alt="Ekran pokaż drogę" width="200" height="300"/>
-<img src="Prototyp/5 ekran twoje konto.png" alt="Ekran twoje konto" width="200" height="300"/>
-<img src="Prototyp/6 ekran dodaj lokal.png" alt="Ekran dodaj lokal" width="200" height="300"/>
-<img src="Prototyp/7 ekran dodaj cene.png" alt="Ekran dodaj cenę" width="200" height="300"/>
-<img src="Prototyp/8 hamburger menu.png" alt="Menu" width="200" height="300"/></p>
+<p align="center"><img src="Prototyp/1%20ekran%20logowania.png" alt="Ekran logowania" width="400" height="500"/>
+<img src="Prototyp/2 ekran rejestracji.png" alt="Ekran rejestracji" width="400" height="500"/>
+<img src="Prototyp/3 ekran home.png" alt="Ekran home" width="400" height="500"/>
+<img src="Prototyp/4 ekran pokaz droge.png" alt="Ekran pokaż drogę" width="400" height="500"/>
+<img src="Prototyp/5 ekran twoje konto.png" alt="Ekran twoje konto" width="400" height="500"/>
+<img src="Prototyp/6 ekran dodaj lokal.png" alt="Ekran dodaj lokal" width="400" height="500""/>
+<img src="Prototyp/7 ekran dodaj cene.png" alt="Ekran dodaj cenę" width="400" height="500"/>
+<img src="Prototyp/8 hamburger menu.png" alt="Menu" width="400" height="500"/></p>
 
 
 [Link do systemu zarządzania projektem](https://trello.com/b/FygUN620/eatshare)
