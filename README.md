@@ -29,7 +29,7 @@ Aplikacja ma na celu zbieranie danych od użytkowników na temat lokali gastrono
 <img src="Prototyp/3 ekran home.png" alt="Ekran home" width="200" height="300"/>
 <img src="Prototyp/4 ekran pokaz droge.png" alt="Ekran pokaż drogę" width="200" height="300"/>
 <img src="Prototyp/5 ekran twoje konto.png" alt="Ekran twoje konto" width="200" height="300"/>
-<img src="Prototyp/6 ekran dodaj lokal.png" alt"Ekran dodaj lokal" width="200" height="300"/>
+<img src="Prototyp/6 ekran dodaj lokal.png" alt="Ekran dodaj lokal" width="200" height="300"/>
 <img src="Prototyp/7 ekran dodaj cene.png" alt="Ekran dodaj cenę" width="200" height="300"/>
 <img src="Prototyp/8 hamburger menu.png" alt="Menu" width="200" height="300"/></p>
 
