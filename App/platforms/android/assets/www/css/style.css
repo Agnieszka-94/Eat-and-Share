@@ -1,0 +1,279 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {overflow-x: hidden;}
+
+body {
+  font: 100% arial, verdana, tahoma, sans-serif;
+  color: #FFF;
+  font:400 15px "Lato", sans-serif;
+  overflow:hidden;
+}
+
+header {
+  overflow: hidden;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+  background-color: #1e1e1e;
+  border-top:none;
+}
+
+header h1 {
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+h1 a {color: #FFF; text-decoration: none;}
+
+header input {
+  float: right;
+  padding: 10px;
+  width: 200px;
+  border: none;
+}
+
+.main {
+  padding: 30px;
+}
+.main p {
+  font-size: .9em;
+  line-height: 1.2em;
+  margin-bottom: 20px;
+}
+
+.menu-mobile {
+  width: 40px;
+  height: 32px;
+  display: inline-block;
+  vertical-align: middle;
+  text-indent: -9999px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.menu-mobile:before {
+  content: "";
+  display: block;
+  margin: 12px auto;
+  width: 50%;
+  height: 0.20em;
+  background: #fff;
+  box-shadow: 0 .45em 0 0 #fff, 0 .9em 0 0 #fff;
+}
+
+header, .main {
+}
+
+.menu{
+  position: relative;
+  z-index: 100;
+  float: left;
+}
+
+.menu-hide{
+  width: 15em;
+  left: -15em;
+  height: 100%;
+  position: fixed;
+  z-index: 10;
+  top: 0px;
+  text-transform: uppercase;
+  background-color: #1e1e1e;
+
+}
+
+.menu-hide.show{
+  left: 0px;
+  background-color: #1e1e1e;
+  text-transform: uppercase;
+  overflow: auto;
+  padding-top: 10px;
+  box-shadow: inset -5px -10px 10px 0 rgba(0,0,0,.3);
+  background-color: #1e1e1e;
+  z-index: 1;
+  position: fixed;
+}
+
+.menu-active menu {
+  -webkit-transform: translateX(0);
+  -moz-transform: translateX(0);
+  -ms-transform: translateX(0);
+  transform: translateX(0);
+}
+
+.menu-active header, 
+.menu-active .main {
+  -webkit-transform: translateX(15em);
+  -moz-transform: translateX(15em);
+  -ms-transform: translateX(15em);
+  transform: translateX(15em);
+}
+
+#listView li:last-child a, #logo {
+  color: #64C135;
+  border: none;
+}
+
+.list-item-active {
+  background-color: #0d0d0d;
+}
+
+#listView li a {
+  display: block;
+  padding: 20px;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 1.1em;
+  text-decoration: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+#list-item-logo {
+  text-align: center;
+  color:  #64C135;
+  margin: 25px;
+}
+
+p { padding: 1em; text-align: center; }
+
+.card {
+  position: relative;
+  margin: 1em auto;
+  width: 15em;
+  transform-style: preserve-3d;
+  transition: transform 1.5s linear;
+}
+.flipped {
+  transform: rotateY(180deg);
+}
+.card .face {
+  position: absolute;
+  top: 0; right: 0; left: 0;
+  padding: .5em;
+  border-radius: .25em;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+}
+.card .face:last-child {
+  transform: rotateY(180deg);
+}
+.card h2 {
+  text-align: center;
+}
+.card input, .card button {
+  display: block;
+  margin: 1em auto;
+  border: none;
+  padding: .25em;
+  width: 90%;
+  border-radius: .25em;
+  font-size: 1em;
+}
+
+.card .btn {
+  position: relative;
+  background-color: #64C135;
+  text-shadow: 0 2px 0 #64C135;
+  cursor: pointer;
+}
+
+.btn2 {
+  background-color: #49639F;
+  color: #fff;
+}
+
+#icon-home {
+  height: 30px;
+  background-color: inherit;
+  box-shadow: none;
+  border: none;
+}
+
+#icon-home:after {
+  background-color: #1e1e1e;
+  border-radius: 25%;
+}
+
+#addrestaurantmap {
+  width: auto; 
+  height: 200px; 
+  border: 1px solid gray; 
+  margin-top: 10px;
+  margin-bottom: 30px;
+} 
+
+#show-way-map {
+  position: absolute;
+    top: 40px;
+    left: 0;
+    bottom: 1px;
+    right: 0;
+} 
+
+.restaurantlist {
+  list-style-type: none;
+}
+
+.restaurant {
+  display: block;  
+  margin-left: -30px;
+  margin-right: -30px;
+}
+
+#cena {
+  margin-left: 50%;
+  display: inline-block;
+  padding: 10px;
+  padding-bottom: 5px;
+  color: #64C135;
+  font-size: 25px;
+}
+
+#arrow-right {
+  float: right;
+  width: 50px;
+}
+
+#nazwalokalu {
+  padding: 20px;
+}
+
+#dodaj {
+  text-align: left;
+  margin: 0px;
+  padding-left: 20px;
+  padding-bottom: 0px;
+  padding-top: 0px;
+}
+  
+.smallbtns-container {
+  display: inline-block !important;
+  text-align: center !important;
+  padding-left: 8px;
+}
+
+.smallbtn {
+  background-color: #fff !important;
+  border: 0.5px solid #1e1e1e !important;
+  margin: 12px !important;
+}
+  
+div.menu-mobile > button {
+  width: 30px;
+  height: 30px;
+  background-color: #1e1e1e;
+  box-shadow: none;
+  border: none;
+}
+
+.footer {
+  color: #fff;
+  bottom: 0;
+  position: fixed;
+  font-size: 12px;
+  text-transform: none;
+}

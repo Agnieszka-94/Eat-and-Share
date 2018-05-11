@@ -1,0 +1,458 @@
+﻿<!DOCTYPE html>
+<html>
+  	<head>
+  		<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    	<title>Eat&Share</title>
+	    <link rel="stylesheet" href="css/style.css">
+	    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
+	    <link rel="stylesheet" href="css/jquery.mobile.icons.min" />
+	    <script src="cordova.js"></script>
+        <script src="scripts/jquery-2.1.4.min.js"></script> 
+		<script src="scripts/jquery.mobile-1.4.5.min.js"></script>
+		<script src="https://maps.google.com/maps/api/js?sensor=true" type="text/javascript"></script>  
+        <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase-auth.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase-firestore.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase-messaging.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.13.0/firebase-functions.js"></script>
+
+        <script src="scripts/index.js"></script>
+  	</head>
+	
+	<body onload="document.addEventListener('deviceready', onDeviceReady.bind(this), false)" class="ui-mobile-viewport ui-overlay-a">
+
+		<div data-role="page" id="login">
+		    <header data-role="header" role="banner" class="ui-header ui-bar-inherit">
+				<div class="menu menu-mobile"><a href=".menu_one"></a></div>
+		      	<h1 id="logo" class="ui-title" role="heading" aria-level="1" style="text-align: right; margin: 0 1em;">Eat&Share</h1>
+		      <!-- <a id="icon-home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-home"></a> -->
+		    </header>
+
+			<menu class="menu-hide">
+			    <ul id="listView"  class="list">
+			    	<li><h2 id="list-item-logo">Witaj w Eat&Share</h2></li>
+			        <li class="onlyLoggedIn"><a href="#home">Home</a></li>
+			        <li class="onlyLoggedIn"><a href="#addrestaurant">Dodaj lokal</a></li>
+			        <li class="onlyLoggedIn"><a href="#addprice">Dodaj cenę</a></li>
+			        <li class="onlyLoggedIn"><a href="#accountfav">Twoje konto</a></li>
+			        <li class="onlyLoggedIn list-item-active"><a href="#login" class="logout">Wyloguj</a></li>
+			        <li class="onlyLoggedIn"><a href="#authors">O autorach</a></li>
+			    </ul>
+			    <div class="footer"><p>Thank you for your visit! Eat&Share &copy; 2018</p></div>
+			</menu>
+
+		    <section class="main">
+		        <div class='card'>
+		          <div id="loginpage" class='face'>
+		            <h2>Logowanie</h2>
+		            <form>
+		              <input type='text' id="loginField" placeholder='Login'>
+		              <input type='password' id="passwordField" placeholder='Hasło'> 
+								</form>
+								<input id="log-in-email" type='submit' value='Zaloguj się'>
+		            <p>Jeśli nie masz jeszcze konta, zarejestruj się!</p>
+		            <button class="switch btn">Zarejestruj się</button>
+		          </div>
+
+		          <div id="registrationpage" class='face'>
+		            <h2>Rejestracja</h2>
+		            <form>
+		              <input type='text' id="singinEmailField" placeholder='Wpisz email'>
+		              <input type='password' id="singinPasswordField" placeholder='Wpisz hasło'>
+		              <input type='password' id="singinPasswordField2" placeholder='Powtórz hasło'>
+								</form>
+		            <input type='submit' id="sign-in-email" value='Zarejestruj się'>								
+		            <button class='switch btn'>Zaloguj się</button>
+		          </div>
+		        </div>
+		    </section>
+		</div>
+
+
+		<div data-role="page" id="home">
+
+				<header data-role="header" role="banner" class="ui-header ui-bar-inherit">
+					<div class="menu menu-mobile"><a href=".menu_one"></a></div>
+					<h1 id="logo" class="ui-title" role="heading" aria-level="1" style="text-align: right; margin: 0 1em;">Eat&Share</h1>
+				</header>
+
+				<menu class="menu-hide">
+				    <ul id="listView"  class="list">
+				    	<li><h2 id="list-item-logo">Witaj w Eat&Share</h2></li>
+				        <li class="onlyLoggedIn list-item-active"><a href="#home">Home</a></li>
+				        <li class="onlyLoggedIn"><a href="#addrestaurant">Dodaj lokal</a></li>
+				        <li class="onlyLoggedIn"><a href="#addprice">Dodaj cenę</a></li>
+				        <li class="onlyLoggedIn"><a href="#accountfav">Twoje konto</a></li>
+				        <li class="onlyLoggedIn"><a href="#login" class="logout">Wyloguj</a></li>
+				        <li class="onlyLoggedIn"><a href="#authors">O autorach</a></li>
+				    </ul>
+				    <div class="footer"><p>Thank you for your visit! Eat&Share &copy; 2018</p></div>
+				</menu>
+
+			<section class="main">
+			<form>
+    			<div class="ui-field-contain">
+                    <div data-role="rangeslider">
+                        <label for="range-7a">Ustal zakres cenowy:</label>
+                        <input name="range-7a" id="range-7a" min="0" max="100" value="0" type="range">
+                        <label for="range-7b">Ustal zakres cenowy:</label>
+                        <input name="range-7b" id="range-7b" min="0" max="100" value="100" type="range">
+                    </div>
+				</div>
+				</form>
+				<input id="wyszukajButton" value="Wyszukaj" type="submit">
+
+				<ul class="restaurantlist" id="restaurantListHome">
+				<li class="restaurant"><div>
+					<h4 id="nazwalokalu">Nazwa lokalu</h4>
+					<p id="cena">Cena</p>
+					<a href="#showmetheway"><img id="arrow-right" src="images/Arrow-Right.png"></a>
+					<p id="dodaj">Dodaj lokal do:</p>
+					<div class="smallbtns-container">
+					<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Ulubione</button>
+					<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Chcę odwiedzić</button></div>
+				</div></li>
+				<li class="restaurant"><div>
+					<h4 id="nazwalokalu">Nazwa lokalu</h4>
+					<p id="cena">Cena</p>
+					<a href="#showmetheway"><img id="arrow-right" src="images/Arrow-Right.png"></a>
+					<p id="dodaj">Dodaj lokal do:</p>
+					<div class="smallbtns-container">
+					<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Ulubione</button>
+					<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Chcę odwiedzić</button></div>
+					</div></li>
+				<li class="restaurant"><div>
+					<h4 id="nazwalokalu">Nazwa lokalu</h4>
+					<p id="cena">Cena</p>
+					<a href="#showmetheway"><img id="arrow-right" src="images/Arrow-Right.png"></a>
+					<p id="dodaj">Dodaj lokal do:</p>
+					<div class="smallbtns-container">
+					<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Ulubione</button>
+					<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Chcę odwiedzić</button></div>
+				</div></li>
+					<li class="restaurant"><div>
+					<h4 id="nazwalokalu">Nazwa lokalu</h4>
+					<p id="cena">Cena</p>
+					<a href="#showmetheway"><img id="arrow-right" src="images/Arrow-Right.png"></a>
+					<p id="dodaj">Dodaj lokal do:</p>
+					<div class="smallbtns-container">
+					<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Ulubione</button>
+					<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Chcę odwiedzić</button></div>
+				</div></li>
+					<li class="restaurant"><div>
+					<h4 id="nazwalokalu">Nazwa lokalu</h4>
+					<p id="cena">Cena</p>
+					<a href="#showmetheway"><img id="arrow-right" src="images/Arrow-Right.png"></a>
+					<p id="dodaj">Dodaj lokal do:</p>
+					<div class="smallbtns-container">
+					<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Ulubione</button>
+					<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Chcę odwiedzić</button></div>
+				</div></li>
+				</ul>
+				</section>
+		</div>
+
+		<div data-role="page" id="showmetheway">
+
+				<header data-role="header" role="banner" class="ui-header ui-bar-inherit">
+					<div class="menu menu-mobile"><a href=".menu_one"></a></div>
+					<h1 id="logo" class="ui-title" role="heading" aria-level="1" style="text-align: right; margin: 0 1em;">Eat&Share</h1>
+					<!-- <a id="icon-home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-home"></a> -->
+				</header>
+
+			  	<menu class="menu-hide">
+				    <ul id="listView"  class="list">
+				    	<li><h2 id="list-item-logo">Witaj w Eat&Share</h2></li>
+				        <li class="onlyLoggedIn"><a href="#home">Home</a></li>
+				        <li class="onlyLoggedIn"><a href="#addrestaurant">Dodaj lokal</a></li>
+				        <li class="onlyLoggedIn"><a href="#addprice">Dodaj cenę</a></li>
+				        <li class="onlyLoggedIn"><a href="#accountfav">Twoje konto</a></li>
+				        <li class="onlyLoggedIn"><a href="#login" class="logout">Wyloguj</a></li>
+				        <li class="onlyLoggedIn"><a href="#authors">O autorach</a></li>
+				    </ul>
+				    <div class="footer"><p>Thank you for your visit! Eat&Share &copy; 2018</p></div>
+			  	</menu>
+
+						<div id="show-way-map"> 
+						</div>
+		</div>
+	
+		<div data-role="page" id="accountfav">
+				<header data-role="header" role="banner" class="ui-header ui-bar-inherit">
+					<div class="menu menu-mobile"><a href=".menu_one"></a></div>
+						<h1 class="ui-title nazwaUzytkownika" role="heading" aria-level="1" >Nazwa użytkownika</h1>
+						<a id="logo" class="ui-title" style="text-align: right; margin: 0 1em; right: 0; margin-right: 30px;">Eat&Share</a>
+						<div data-role="navbar">
+							<ul>
+									<li class="onlyLoggedIn list-item-active"><a href="#accountfav">Ulubione</a></li>
+									<li><a href="#accountvisit">Chcę odwiedzić</a></li>
+							</ul>
+						</div>
+					</header>
+
+				<menu class="menu-hide">
+				    <ul id="listView"  class="list">
+				    	<li><h2 id="list-item-logo">Witaj w Eat&Share</h2></li>
+				        <li class="onlyLoggedIn"><a href="#home">Home</a></li>
+				        <li class="onlyLoggedIn"><a href="#addrestaurant">Dodaj lokal</a></li>
+				        <li class="onlyLoggedIn"><a href="#addprice">Dodaj cenę</a></li>
+				        <li class="onlyLoggedIn list-item-active"><a href="#accountfav">Twoje konto</a></li>
+				        <li class="onlyLoggedIn"><a href="#login" class="logout">Wyloguj</a></li>
+				        <li class="onlyLoggedIn"><a href="#authors">O autorach</a></li>
+				    </ul>
+				    <div class="footer"><p>Thank you for your visit! Eat&Share &copy; 2018</p></div>
+				</menu>
+
+					<section class="main">
+						<ul id="favoriteRestaurantList" class="restaurantlist">
+							<li class="restaurant"><div>
+								<h4 id="nazwalokalu">Nazwa lokalu</h4>
+								<p id="cena">Cena</p>
+								<a href="#showmetheway"><img id="arrow-right" src="images/Arrow-Right.png"></a>
+								<p id="dodaj">Dodaj lokal do:</p>
+								<div class="smallbtns-container">
+								<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Ulubione</button>
+								<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Chcę odwiedzić</button>
+								<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Usuń</button></div>
+							</div></li>
+							<li class="restaurant"><div>
+								<h4 id="nazwalokalu">Nazwa lokalu</h4>
+								<p id="cena">Cena</p>
+								<a href="#showmetheway"><img id="arrow-right" src="images/Arrow-Right.png"></a>
+								<p id="dodaj">Dodaj lokal do:</p>
+								<div class="smallbtns-container">
+								<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Ulubione</button>
+								<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Chcę odwiedzić</button>
+								<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Usuń</button></div>
+							</div></li>
+							<li class="restaurant"><div>
+								<h4 id="nazwalokalu">Nazwa lokalu</h4>
+								<p id="cena">Cena</p>
+								<a href="#showmetheway"><img id="arrow-right" src="images/Arrow-Right.png"></a>
+								<p id="dodaj">Dodaj lokal do:</p>
+								<div class="smallbtns-container">
+								<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Ulubione</button>
+								<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Chcę odwiedzić</button>
+								<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Usuń</button></div>
+							</div></li>
+							<li class="restaurant"><div>
+								<h4 id="nazwalokalu">Nazwa lokalu</h4>
+								<p id="cena">Cena</p>
+								<a href="#showmetheway"><img id="arrow-right" src="images/Arrow-Right.png"></a>
+								<p id="dodaj">Dodaj lokal do:</p>
+								<div class="smallbtns-container">
+								<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Ulubione</button>
+								<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Chcę odwiedzić</button>
+								<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Usuń</button></div>
+							</div></li>
+							<li class="restaurant"><div>
+								<h4 id="nazwalokalu">Nazwa lokalu</h4>
+								<p id="cena">Cena</p>
+								<a href="#showmetheway"><img id="arrow-right" src="images/Arrow-Right.png"></a>
+								<p id="dodaj">Dodaj lokal do:</p>
+								<div class="smallbtns-container">
+								<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Ulubione</button>
+								<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Chcę odwiedzić</button>
+								<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Usuń</button></div>
+							</div></li>
+							</ul>
+			</section>
+		</div>
+	
+		<div data-role="page" id="accountvisit">
+				<header data-role="header" role="banner" class="ui-header ui-bar-inherit">
+					<div class="menu menu-mobile"><a href=".menu_one"></a></div>
+						<h1 class="ui-title nazwaUzytkownika" role="heading" aria-level="1" >Nazwa użytkownika</h1>
+						<a id="logo" class="ui-title" style="text-align: right; margin: 0 1em; right: 0; margin-right: 30px;">Eat&Share</a>
+						<div data-role="navbar">
+							<ul>
+									<li><a href="#accountfav">Ulubione</a></li>
+									<li class="onlyLoggedIn list-item-active"><a href="#accountvisit">Chcę odwiedzić</a></li>
+							</ul>
+						</div>
+					</header>
+
+				<menu class="menu-hide">
+				    <ul id="listView"  class="list">
+				    	<li><h2 id="list-item-logo">Witaj w Eat&Share</h2></li>
+				        <li class="onlyLoggedIn"><a href="#home">Home</a></li>
+				        <li class="onlyLoggedIn"><a href="#addrestaurant">Dodaj lokal</a></li>
+				        <li class="onlyLoggedIn"><a href="#addprice">Dodaj cenę</a></li>
+				        <li class="onlyLoggedIn list-item-active"><a href="#accountfav">Twoje konto</a></li>
+				        <li class="onlyLoggedIn"><a href="#login" class="logout">Wyloguj</a></li>
+				        <li class="onlyLoggedIn"><a href="#authors">O autorach</a></li>
+				    </ul>
+				    <div class="footer"><p>Thank you for your visit! Eat&Share &copy; 2018</p></div>
+				</menu>
+
+					<section class="main">
+							<ul id="toVisitRestaurantList" class="restaurantlist">
+									<li class="restaurant"><div>
+										<h4 id="nazwalokalu">Nazwa lokalu</h4>
+										<p id="cena">Cena</p>
+										<a href="#showmetheway"><img id="arrow-right" src="images/Arrow-Right.png"></a>
+										<p id="dodaj">Dodaj lokal do:</p>
+										<div class="smallbtns-container">
+										<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Ulubione</button>
+										<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Chcę odwiedzić</button>
+										<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Usuń</button></div>
+									</div></li>
+									<li class="restaurant"><div>
+										<h4 id="nazwalokalu">Nazwa lokalu</h4>
+										<p id="cena">Cena</p>
+										<a href="#showmetheway"><img id="arrow-right" src="images/Arrow-Right.png"></a>
+										<p id="dodaj">Dodaj lokal do:</p>
+										<div class="smallbtns-container">
+										<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Ulubione</button>
+										<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Chcę odwiedzić</button>
+										<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Usuń</button></div>
+									</div></li>
+									<li class="restaurant"><div>
+										<h4 id="nazwalokalu">Nazwa lokalu</h4>
+										<p id="cena">Cena</p>
+										<a href="#showmetheway"><img id="arrow-right" src="images/Arrow-Right.png"></a>
+										<p id="dodaj">Dodaj lokal do:</p>
+										<div class="smallbtns-container">
+										<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Ulubione</button>
+										<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Chcę odwiedzić</button>
+										<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Usuń</button></div>
+									</div></li>
+									<li class="restaurant"><div>
+										<h4 id="nazwalokalu">Nazwa lokalu</h4>
+										<p id="cena">Cena</p>
+										<a href="#showmetheway"><img id="arrow-right" src="images/Arrow-Right.png"></a>
+										<p id="dodaj">Dodaj lokal do:</p>
+										<div class="smallbtns-container">
+										<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Ulubione</button>
+										<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Chcę odwiedzić</button>
+										<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Usuń</button></div>
+									</div></li>
+									<li class="restaurant"><div>
+										<h4 id="nazwalokalu">Nazwa lokalu</h4>
+										<p id="cena">Cena</p>
+										<a href="#showmetheway"><img id="arrow-right" src="images/Arrow-Right.png"></a>
+										<p id="dodaj">Dodaj lokal do:</p>
+										<div class="smallbtns-container">
+										<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Ulubione</button>
+										<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Chcę odwiedzić</button>
+										<button class="smallbtn ui-shadow ui-btn ui-corner-all ui-btn-inline">Usuń</button></div>
+									</div></li>
+									</ul>
+					</section>
+	
+		</div>
+
+		<div data-role="page" id="addrestaurant">
+				<header data-role="header" role="banner" class="ui-header ui-bar-inherit">
+					<div class="menu menu-mobile"><a href=".menu_one"></a></div>
+						<h1 class="ui-title nazwaUzytkownika" role="heading" aria-level="1" >Nazwa użytkownika</h1>
+						<a id="logo" class="ui-title" style="text-align: right; margin: 0 1em; right: 0; margin-right: 30px;">Eat&Share</a>
+						<div data-role="navbar">
+							<ul>
+									<li class="onlyLoggedIn list-item-active"><a href="#addrestaurant">Dodaj lokal</a></li>
+									<li class="onlyLoggedIn"><a href="#addprice">Dodaj cenę</a></li>
+							</ul>
+						</div>
+					</header>
+
+					<menu class="menu-hide">
+					    <ul id="listView"  class="list">
+					    	<li><h2 id="list-item-logo">Witaj w Eat&Share</h2></li>
+					        <li class="onlyLoggedIn"><a href="#home">Home</a></li>
+					        <li class="onlyLoggedIn list-item-active"><a href="#addrestaurant">Dodaj lokal</a></li>
+					        <li class="onlyLoggedIn"><a href="#addprice">Dodaj cenę</a></li>
+					        <li class="onlyLoggedIn"><a href="#accountfav">Twoje konto</a></li>
+					        <li class="onlyLoggedIn"><a class="logout">Wyloguj</a></li>
+					        <li class="onlyLoggedIn"><a href="#authors">O autorach</a></li>
+					    </ul>
+					    <div class="footer"><p>Thank you for your visit! Eat&Share &copy; 2018</p></div>
+					</menu>
+
+					<section class="main">
+							<label for="text-basic">Wprowadź nazwę lokalu:</label>
+							<input name="text-basic" id="addname" value="" type="text">
+
+							<h4 style="font-weight: normal; margin-top: 30px;">Zaznacz lokalizację na mapie:</h4>
+							<div id="addrestaurantmap">
+							</div>
+
+							<label for="number-pattern">Wprowadź cenę:</label>
+							<input name="number" id="number-pattern" class="priceAddRestaurant" value="" type="number">
+							<input value="Dodaj" id="add-restaurant" type="submit">
+					</section>
+	
+		</div>
+
+		<div data-role="page" id="addprice">
+				<header data-role="header" role="banner" class="ui-header ui-bar-inherit">
+					<div class="menu menu-mobile"><a href=".menu_one"></a></div>
+						<h1 class="ui-title nazwaUzytkownika" role="heading" aria-level="1" >Nazwa użytkownika</h1>
+						<a id="logo" class="ui-title" style="text-align: right; margin: 0 1em; right: 0; margin-right: 30px;">Eat&Share</a>
+						
+						<div data-role="navbar">
+							<ul>
+									<li class="onlyLoggedIn"><a href="#addrestaurant">Dodaj lokal</a></li>
+									<li class="onlyLoggedIn list-item-active"><a href="#addprice">Dodaj cenę</a></li>
+							</ul>
+						</div>
+					</header>
+
+					<menu class="menu-hide">
+					    <ul id="listView"  class="list">
+					    	<li><h2 id="list-item-logo">Witaj w Eat&Share</h2></li>
+					        <li class="onlyLoggedIn"><a href="#home">Home</a></li>
+					        <li class="onlyLoggedIn"><a href="#addrestaurant">Dodaj lokal</a></li>
+					        <li class="onlyLoggedIn list-item-active"><a href="#addprice">Dodaj cenę</a></li>
+					        <li class="onlyLoggedIn"><a href="#accountfav">Twoje konto</a></li>
+					        <li class="onlyLoggedIn"><a href="#login" class="logout">Wyloguj</a></li>
+					        <li class="onlyLoggedIn"><a href="#authors">O autorach</a></li>
+					    </ul>
+					    <div class="footer"><p>Thank you for your visit! Eat&Share &copy; 2018</p></div>
+					</menu>
+
+					<section class="main">
+								
+							<label for="select-choice-1" class="select">Wybierz lokal:</label>
+							<select name="select-choice-1" id="select-choice-1">
+								<option value="nazwalokalu1">Nazwa lokalu1</option>
+							</select>
+							<label for="number-pattern">Wprowadź cenę:</label>
+							<input name="number" id="pricetoadd" value="" type="number">
+							<input value="Dodaj" id="addPrice" type="submit">
+					</section>
+	
+		</div>
+
+        <div data-role="page" id="authors">
+            <header data-role="header" role="banner" class="ui-header ui-bar-inherit">
+                <div class="menu menu-mobile"><a href=".menu_one"></a></div>
+                <h1 id="logo" class="ui-title" role="heading" aria-level="1" style="text-align: right; margin: 0 1em;">Eat&Share</h1>
+                <!-- <a id="icon-home" class="ui-btn ui-shadow ui-corner-all ui-btn-icon-right ui-icon-home"></a> -->
+            </header>
+
+            <br><br><center><h2>Autorzy aplikacji Eat&Share</h2></center><br><br>
+            <center style="font-size: 13px;">Barbara Nogaś - Przewodnicząca grupy projektowej </center><br>
+            <center> <img src="images/bn.jpg" style="max-height:80%;max-width:80%; border-radius: 50%;" alt="Barbara Nogaś" /></center><br><br><br>
+            <center style="font-size: 13px;">Agnieszka Tuleta - Programistka oraz testerka </center><br>
+            <center> <img src="images/at.jpg" style="max-height:80%;max-width:80%; border-radius: 50%" alt="Agnieszka Tuleta" /></center><br><br><br>
+            <center style="font-size: 13px;">Przemysław Krzyżak - Programista oraz tester </center><br>
+            <center> <img src="images/pk.jpg" style="max-height:80%;max-width:80%; border-radius: 50%" alt="Przemysław Krzyżak" /></center><br><br><br>
+
+            <menu class="menu-hide">
+                <ul id="listView" class="list">
+                    <li><h2 id="list-item-logo">Witaj w Eat&Share</h2></li>
+                    <li class="onlyLoggedIn"><a href="#home">Home</a></li>
+                    <li class="onlyLoggedIn"><a href="#addrestaurant">Dodaj lokal</a></li>
+                    <li class="onlyLoggedIn"><a href="#addprice">Dodaj cenę</a></li>
+                    <li class="onlyLoggedIn"><a href="#accountfav">Twoje konto</a></li>
+                    <li><a href="#login" class="logout">Wyloguj</a></li>
+                    <li class="onlyLoggedIn list-item-active"><a href="#authors">O autorach</a></li>
+                </ul>
+                <div class="footer"><p>Thank you for your visit! Eat&Share &copy; 2018</p></div>
+            </menu>
+        </div>
+	 
+	</body>
+</html>

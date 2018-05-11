@@ -27,6 +27,9 @@
         },
         "cordova-plugin-inappbrowser": {
             "PACKAGE_NAME": "io.cordova.myapp66a930"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "io.cordova.myapp66a930"
         }
     },
     "dependent_plugins": {
