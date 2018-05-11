@@ -20,6 +20,7 @@ Aplikacja ma na celu zbieranie danych od użytkowników na temat lokali gastrono
 |Front-end ekranów home, pokaż drogę, dodaj lokal, dodaj cenę, twoje konto|10|Strona projektu na git|2|Obsługa Firebase|8|
 |Funkcje obsługi dodawania/wyświetlania/usuwania rekordów z Firebase|10|||Obsługa Map|10|
 ||24,5||24||22,5|
+||34,5%||33,8%||31,7%|
 
 	
 
