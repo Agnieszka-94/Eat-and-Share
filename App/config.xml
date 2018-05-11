@@ -3,6 +3,7 @@
   <name>EatAndShare</name>
   <description>Student team project for BAI classes</description>
   <author href="http://cordova.io" email="dev@cordova.apache.org">Barbara Nogaś, Agnieszka Tuleta, Przemysław Krzyżak</author>
+  <icon src="merges/android/favicon.png" platform="android" width="57" height="57" density="mdpi" />
   <vs:template-name>BlankJS</vs:template-name>
   <vs:toolsetVersion>6.3.1</vs:toolsetVersion>
   <engine name="android" spec="5.2.1" />

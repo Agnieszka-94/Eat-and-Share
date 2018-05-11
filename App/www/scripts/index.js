@@ -35,8 +35,6 @@ function initMenus() {
         }, false);
     }
 
-    $('.restaurantlist li:even').css('background-color', '#f2f2f2');
-    $('.restaurantlist li:odd').css('background-color', 'inherit');
     hideMenusFromLoggedOutUser();
 }
 
@@ -87,9 +85,7 @@ function onLogin() {
 
 function bindEvents() {
     //===== membeship events =====
-    $('#sign-in-google').on("click", authWithGoogle);
     $('#sign-in-email').on("click", authWithEmail);
-    $('#sign-in-facebook').on("click", authWithFacebook);
     $('#log-in-email').on("click", loginWithEmailEvt);
     $('#add-restaurant').on("click", handleAddingRestaurant);
     $('.logout').on("click", logout);
@@ -131,16 +127,6 @@ function logout() {
             console.log("Error during logout");
             handleErrorWithAlert(error);
         });
-}
-
-function authWithGoogle() {
-    var provider = new firebase.auth.GoogleAuthProvider();
-    authUsingProvider(provider);
-}
-
-function authWithFacebook() {
-    var provider = new firebase.auth.FacebookAuthProvider();
-    authUsingProviderPopUp(provider);
 }
 
 function authUsingProvider(providerToAuth) {
