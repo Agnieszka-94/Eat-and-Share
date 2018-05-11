@@ -16,7 +16,7 @@ Aplikacja ma na celu zbieranie danych od użytkowników na temat lokali gastrono
 |-|-|-|-|-|-|
 |Projektowanie layoutu i funkcjonalności aplikacji|3|Projektowanie layoutu i funkcjonalności aplikacji|3|Projektowanie layoutu i funkcjonalności aplikacji|3|
 |Wykonanie prototypu|1|Front-end ekranów logowania, rejestracji i menu|7|Aktualizacja szkieletu|1|
-|Wykonanie szkieletu pliku html| 0,5|Funkcje odpowiadające za front-end + rejestracja, logowanie, wylogowywanie|12|Front-end strony o autorach|0,5|
+|Wykonanie szkieletu pliku html| 0,5|Funkcje odpowiadające za rejestracja, logowanie, wylogowywanie|12|Front-end strony o autorach|0,5|
 |Front-end ekranów home, pokaż drogę, dodaj lokal, dodaj cenę, twoje konto|10|Strona projektu na git|2|Obsługa Firebase|8|
 |Funkcje obsługi dodawania/wyświetlania/usuwania rekordów z Firebase|10|||Obsługa Map|10|
 ||24,5||24||22,5|
